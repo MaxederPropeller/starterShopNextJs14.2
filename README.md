@@ -33,39 +33,45 @@ Erstelle eine .env.local Datei und füge deine Stripe API-Schlüssel, Firebase-K
 
 4. **Installation der Dienste:**
 - Firebase
- npm i firebase 
- npm init firebase 
- ...weiter
+    ```bash
+    npm i firebase 
+    npm init firebase 
+    ...weiter
 
 - Stripe
-npm install @stripe/react-stripe-js 
-npm install stripe @stripe/stripe-js
+    ```bash
+    npm install @stripe/react-stripe-js 
+    npm install stripe @stripe/stripe-js
 
 - Resend und Mail
-npm install resend
-npm install react-email @react-email/components @react-email/render
+    ```bash
+    npm install resend
+    npm install react-email @react-email/components @react-email/render
 
 - Kinde Auth
-npm i @kinde-oss/kinde-auth-nextjs
+    ```bash
+    npm i @kinde-oss/kinde-auth-nextjs
 
 - ShadCN/Ui
-npx shadcn-ui@latest init         
-npx shadcn-ui@latest add card   
-npx shadcn-ui@latest add carousel   
-npm install embla-carousel-autoplay --save
-npx shadcn-ui@latest add checkbox   
-npx shadcn-ui@latest add drawer   
-npm install @radix-ui/react-dialog
-npx shadcn-ui@latest add input   
-npx shadcn-ui@latest add label   
-npx shadcn-ui@latest add sheet   
-npm install sonner next-themes   
-npx shadcn-ui@latest add sonner   
-npx shadcn-ui@latest add textarea  
-npm install vaul 
+    ```bash
+    npx shadcn-ui@latest init         
+    npx shadcn-ui@latest add card   
+    npx shadcn-ui@latest add carousel   
+    npm install embla-carousel-autoplay --save
+    npx shadcn-ui@latest add checkbox   
+    npx shadcn-ui@latest add drawer   
+    npm install @radix-ui/react-dialog
+    npx shadcn-ui@latest add input   
+    npx shadcn-ui@latest add label   
+    npx shadcn-ui@latest add sheet   
+    npm install sonner next-themes   
+    npx shadcn-ui@latest add sonner   
+    npx shadcn-ui@latest add textarea  
+    npm install vaul 
    
 - Framer Motion 
-npm install framer-motion   
+    ```bash
+    npm install framer-motion   
 
 5. **Starte den Entwicklungsserver:**
     ```bash
