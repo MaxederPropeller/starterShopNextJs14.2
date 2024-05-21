@@ -1,0 +1,55 @@
+import { ProductType } from "./helpers/types";
+
+
+export const exampleProducts = [
+  {
+    id: '1',
+    name: 'Nike Air',
+    price: 120,
+    description: 'The Nike Air is a classic sneaker that has been around for decades.',
+    image: 'https://via.placeholder.com/150',
+    isOnSale: true,
+  },
+  {
+    id: '2',
+    name: 'Adidas Boost',
+    price: 80,
+    description: 'The Adidas Boost is a comfortable and stylish sneaker that is perfect for everyday wear.',
+    image: 'https://via.placeholder.com/150',
+    isOnSale: false,
+  },
+  {
+    id: '3',
+    name: 'Puma Suede',
+    price: 100,
+    description: 'The Puma Suede is a classic sneaker that is perfect for any occasion.',
+    image: 'https://via.placeholder.com/150',
+    isOnSale: true,
+  },
+  {
+    id: '4',
+    name: 'Reebok Classic',
+    price: 90,
+    description: 'The Reebok Classic is a stylish sneaker that is perfect for any casual outfit.',
+    image: 'https://via.placeholder.com/150',
+    isOnSale: false,
+  },
+  {
+    id: '5',
+    name: 'Vans Old Skool',
+    price: 70,
+    description: 'The Vans Old Skool is a classic sneaker that is perfect for any skater.',
+    image: 'https://via.placeholder.com/150',
+    isOnSale: true,
+  },
+  {
+    id: '6',
+    name: 'Converse All Star',
+    price: 60,
+    description: 'The Converse All Star is a classic sneaker that is perfect for any casual outfit.',
+    image: 'https://via.placeholder.com/150',
+    isOnSale: false,
+  },
+
+
+] as ProductType[];
