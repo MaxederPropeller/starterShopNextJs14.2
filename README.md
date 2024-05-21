@@ -18,8 +18,8 @@ Blanco Shop ist eine hochmoderne E-Commerce-Vorlage, die auf Next.js 14.2, TypeS
 
 1. **Klone das Repository:**
    ```bash
-   git clone [ungültige URL entfernt]
-   cd blanco-shop
+   git clone https://github.com/MaxederPropeller/starterShopNextJs14.2.git
+   cd starterShopNextJs14.2
 
 2. **Installiere Abhängigkeiten:**
 
