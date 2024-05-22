@@ -18,7 +18,7 @@ export default  function ProductCard  ({ product }: { product: ProductType })  {
 
   return (
     <MotionDiv
-      className={`  min-h-fit lg:hover:scale-105 transition-transform duration-300 ease-in-out lg:hover:z-20  relative max-w-sm rounded overflow-hidden shadow-lg flex flex-col justify-between h-full`}
+      className={`  col-span-auto min-h-fit lg:hover:scale-105 transition-transform duration-300 ease-in-out lg:hover:z-20  relative max-w-sm rounded overflow-hidden shadow-lg flex flex-col justify-between h-full`}
       transition={{ duration: 0.2 }}>
       <div className="relative h-full">
         <Image className="w-full min-w-full min-h-full object-contain shadow-slate-300/30 shadow-lg" src={product.image} alt={product.name} 
@@ -47,7 +47,7 @@ export default  function ProductCard  ({ product }: { product: ProductType })  {
         <AddShoppingCartButton product={product} />
         </div>
       </div>
-      <div className="flex-grow px-6 py-4">
+      <div className=" relative flex-grow px-6 py-4 h-fit">
         <div className="font-bold text-xl mb-2">{product.name}</div>
         <p className="text-gray-700 text-base">{product.shortDes}</p>
       </div>
