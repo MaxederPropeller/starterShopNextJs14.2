@@ -15,6 +15,7 @@ import { ProductType, WarenKorbItemProps } from "../../helpers/types";
 
 import { CheckoutFormCart } from "../../helpers/stripe/CheckoutFormCart";
 import { CURRENCY } from "../../helpers/stripe/stripeHelpers";
+import Image from "next/image";
 
 
 // Sidebar Sheet für den Warenkorb
@@ -70,7 +71,9 @@ export const WarenKorbItem = ({ product, quantity }: WarenKorbItemProps) => {
   return (
     <div className="flex justify-between items-center flex-col my-4 max-h-24 w-full">
       <div className="flex items-center gap-2 w-full">
-        <img src={product.image} alt={product.name} className="w-full max-w-24 h-full max-h-24 object-cover" />
+        <Image src={product.image} alt={product.name} className="w-full max-w-24 h-full max-h-24 object-cover" 
+          width={100} height={100}
+        />
 
         <div className='text-end flex flex-col w-full'>
           <h3 className="text-lg font-bold">{product.name}</h3>
