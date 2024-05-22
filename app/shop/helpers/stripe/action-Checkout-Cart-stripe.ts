@@ -13,7 +13,7 @@ export async function createCheckoutSession(
 ): Promise<{ client_secret: string | null; url: string | null }> {
   const ui_mode = data.get("uiMode") as Stripe.Checkout.SessionCreateParams.UiMode;
   const origin: string = headers().get("origin") as string;
-
+  const ProductID = cartItems.map(({ product }) => product.id);
   const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = cartItems.map(({ product, quantity }) => ({
     quantity,
     price_data: {
@@ -29,7 +29,11 @@ export async function createCheckoutSession(
 
   const checkoutSession: Stripe.Checkout.Session = await stripe.checkout.sessions.create({
     line_items: lineItems,
+    metadata: {
+      product_id: ProductID.join(","),
+    },
     mode: "payment",
+
     submit_type: "pay",
     consent_collection: { terms_of_service: 'required' },
     shipping_address_collection: {
@@ -40,7 +44,7 @@ export async function createCheckoutSession(
         message: 'Bitte geben Sie Ihre Lieferadresse ein. Wir liefern nur in die oben aufgeführten Länder. Danke für Ihr Verständnis.',
       },
       terms_of_service_acceptance: {
-        message: `Ich stimme den [AGB's](${origin}/termsofuse) zu`,
+        message: `Ich stimme den [AGB's](${origin}/abgs) zu`,
       },
       submit: {
         message: 'Sie werden per Mail über den Bestellstatus informiert.',

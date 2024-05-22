@@ -63,6 +63,9 @@ const productDB = resDataDB.find((product) => product.id === productid);
       },
     ],
     mode: "payment",
+    metadata: {
+      product_id: productid,
+    },
     submit_type: "pay",
     consent_collection: {
       terms_of_service: 'required',
@@ -81,7 +84,7 @@ const productDB = resDataDB.find((product) => product.id === productid);
         message: 'Bitte geben Sie Ihre Lieferadresse ein. Wir liefern nur in die oben aufgeführten Länder. Danke für Ihr Verständnis.',
       },
       terms_of_service_acceptance: {
-        message: `Ich stimme den [AGB's](${origin}/termsofuse) zu`,
+        message: `Ich stimme den [AGB's](${origin}/agbs) zu`,
       },
       submit: {
         message: 'Sie werden per Mail über den Bestellstatus informiert.',
@@ -90,6 +93,7 @@ const productDB = resDataDB.find((product) => product.id === productid);
    
     ...(ui_mode === "hosted" && {
       success_url: `${origin}/shop/result?session_id={CHECKOUT_SESSION_ID}`,
+      
       cancel_url: `${origin}/shop`,
     }),
     ui_mode,

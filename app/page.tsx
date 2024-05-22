@@ -5,11 +5,11 @@ import ShopSection from "@/components/ShopSection";
 
 export default function Home() {
   return (
-<>
+<div className="mb-12">
     <HeroSection />
     <ShopSection />
     {/* <InfinityCarousel items={["1", "2", "3", "4", "5"]} /> */}
     <ContactSection />
-</>
+</div>
   );
 }
