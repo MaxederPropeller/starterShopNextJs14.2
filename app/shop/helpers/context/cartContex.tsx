@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 import { toast } from 'sonner';
 import { CartProviderProps, ProductType } from '../types';
@@ -49,7 +49,9 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     setCart(prevCart => prevCart.filter(p => p.product.id !== productId));
   };
 
-  const cartTotal = cart.reduce((acc, { product, quantity }) => acc + product.price * quantity, 0);
+
+  
+  const cartTotal = cart.reduce((acc, { product, quantity }) => acc + (product?.salePrice ?? 0) * quantity, 0);
 
   const removeAllFromCart = () => {
     setCart([]);

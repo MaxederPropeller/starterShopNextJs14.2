@@ -6,6 +6,7 @@ import Navbar from "@/components/nav/Navbar";
 import { Toaster } from "@/components/ui/sonner";
 import { CartProvider } from "./shop/helpers/context/cartContex";
 import { ThemeProvider } from "@/lib/ThemeProvider";
+import Footer from "@/components/footer/Footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
         <CartProvider>
           <Navbar />
           {children}
+          <Footer />
           <Toaster 
             position="bottom-right" 
           />

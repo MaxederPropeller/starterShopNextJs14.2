@@ -68,6 +68,11 @@ Erstelle eine .env.local Datei und füge deine Stripe API-Schlüssel, Firebase-K
     npx shadcn-ui@latest add sonner   
     npx shadcn-ui@latest add textarea  
     npm install vaul 
+    npx shadcn-ui@latest add tabs
+    npx shadcn-ui@latest add toggle
+    npx shadcn-ui@latest add toggle-group
+
+
    
 - Framer Motion 
     ```bash

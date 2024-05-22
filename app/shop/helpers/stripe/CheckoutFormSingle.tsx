@@ -1,4 +1,4 @@
-
+'use client';
 // Importiert Stripe-Typen für die TypeScript-Integration.
 import type Stripe from "stripe";
 import React, { useState } from "react";
@@ -13,6 +13,7 @@ import {
   EmbeddedCheckoutProvider,
 } from "@stripe/react-stripe-js";
 import { MotionButton } from "@/lib/motionExport";
+import { Button } from "@/components/ui/button";
 
 
 
@@ -31,7 +32,7 @@ interface URLProps {
 
 
   
-  export function CheckoutForm(props: CheckoutFormProps): JSX.Element {
+  export function CheckoutFormSingle(props: CheckoutFormProps): JSX.Element {
     const [loading, setLoading] = useState<boolean>(false);
 
       const [clientSecret, setClientSecret] = useState<string | null>(null);
@@ -60,16 +61,13 @@ interface URLProps {
 
      
 
-        <MotionButton
-       
-          whileTap={{ scale: 0.95 }}
-          whileHover={{ scale: 1.05 }}
-          className="w-full  border-2 font-bold p-4 rounded border-accent-foreground"  
+        <Button
           type="submit"
           disabled={loading}
+          className="w-full"
         >
           Kaufen
-        </MotionButton>
+        </Button>
       </form>
       {clientSecret ? (
         <EmbeddedCheckoutProvider

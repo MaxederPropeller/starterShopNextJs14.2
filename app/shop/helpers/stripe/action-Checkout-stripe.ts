@@ -30,7 +30,7 @@ export async function createCheckoutSession(
 
 const productDB = resDataDB.find((product) => product.id === productid);
   const productName = productDB?.name ?? "";
-  const productPrice =  formatAmountForStripe(productDB?.price ?? 0, CURRENCY);
+  const productPrice =  formatAmountForStripe(productDB?.salePrice ?? 0, CURRENCY);
   const productDescription = productDB?.shortDes ?? "";
   const productImage = productDB?.image ?? "";
 

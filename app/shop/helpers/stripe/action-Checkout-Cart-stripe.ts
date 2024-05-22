@@ -23,7 +23,7 @@ export async function createCheckoutSession(
         description: product.shortDes || "", // Use empty string if shortDes is null/undefined
         images: [product.image],
       },
-      unit_amount: formatAmountForStripe(product.price, CURRENCY),
+      unit_amount: formatAmountForStripe(product?.salePrice || 0, CURRENCY) || formatAmountForStripe(product.price, CURRENCY),
     },
   }));
 

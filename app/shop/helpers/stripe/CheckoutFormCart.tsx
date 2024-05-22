@@ -44,14 +44,13 @@ export function CheckoutFormCart({ cartItems, uiMode }: CheckoutFormProps): JSX.
   };
   return (
     <>
-      <form action={formAction} >
+      <form action={formAction} className="w-full">
         <input type="hidden" name="uiMode" value={uiMode} />
         {/* Optional hidden fields for other data you want to send to createCheckoutSession */}
         <MotionButton
-          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.5 }}
-            className="w-full  min-w-[200px] bg-lime-400 py-2 px-4 font-bold text-primary  rounded"  
+            className="w-full   bg-lime-400 py-2 px-4 font-bold text-primary  rounded"  
           type="submit"
           disabled={loading}
         >

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import NavbarButton from './navbar-button';
 import { WarenKorbSheet } from '@/app/shop/components/cart/cart';
+import { FirmenInformationen, links } from '@/lib/links';
 
 
 
@@ -49,12 +50,7 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
-  const links = [
-    { href: '/', label: 'About Me' },
-    { href: '/shop', label: 'Shop' },
-    { href: '/gallery', label: 'Gallery' },
-    { href: '/contact', label: 'Kontakt' },
-  ];
+
 
   const renderLinks = (isMobile: boolean) =>
     links.map((link) => (
@@ -79,7 +75,10 @@ const Navbar = () => {
             <div className='w-full flex flex-col lg:justify-center lg:items-center py-4'>
                 <div className='w-full flex justify-between relative lg:justify-center lg:items-center lg:text-center
                  '>
-                    <h1 className="text-black text-xl lg:text-3xl font-bold w-full">My View Photography</h1>
+                    <Link
+                        href="/"
+                      
+                    className="text-black text-xl lg:text-3xl font-bold w-full">  {FirmenInformationen.firmenName}</Link>
                     <div className="lg:hidden flex gap-4">
                     
                         <WarenKorbSheet />

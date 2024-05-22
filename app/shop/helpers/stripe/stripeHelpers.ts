@@ -32,4 +32,4 @@ export function formatAmountForDisplay(
   
   
   
-  export const CURRENCY = "chf";
+  export const CURRENCY = "CHF";

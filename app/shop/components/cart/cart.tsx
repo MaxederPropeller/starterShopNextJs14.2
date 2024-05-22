@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { ProductType, WarenKorbItemProps } from "../../helpers/types";
 
 import { CheckoutFormCart } from "../../helpers/stripe/CheckoutFormCart";
+import { CURRENCY } from "../../helpers/stripe/stripeHelpers";
 
 
 // Sidebar Sheet für den Warenkorb
@@ -30,7 +31,7 @@ export const WarenKorbSheet = () => {
           </svg>
         
       </SheetTrigger>
-      <SheetContent className='overflow-scroll h-full'>
+      <SheetContent className='overflow-y-auto h-full'>
         <SheetHeader>
           <SheetTitle>Warenkorb</SheetTitle>
           
@@ -71,9 +72,20 @@ export const WarenKorbItem = ({ product, quantity }: WarenKorbItemProps) => {
       <div className="flex items-center gap-2 w-full">
         <img src={product.image} alt={product.name} className="w-full max-w-24 h-full max-h-24 object-cover" />
 
-        <div className='text-start flex flex-col w-full'>
+        <div className='text-end flex flex-col w-full'>
           <h3 className="text-lg font-bold">{product.name}</h3>
-          <p className="text-sm font-semibold">{product.price} CHF</p>
+          <div className="w-full flex justify-end items-end">
+            {product?.isOnSale === true && (
+                                      <div className='flex flex-col justify-end items-end'>
+                                          <div className="text-gray-500 text-sm font-semibold line-through">{CURRENCY} {product?.price}</div>
+                                          <div className="text-red-500 text-lg font-bold">{CURRENCY} {product?.salePrice}</div>
+                                      </div>
+                                  )}
+                                  {product?.isOnSale === false && (
+                                      <div className="text-primary text-lg font-bold">{CURRENCY} {product?.price}</div>
+                                  )}
+          </div>
+         
           <div className='flex gap-2 items-center justify-between'>
             <button
               className="bg-gray-200 text-black rounded px-2"
