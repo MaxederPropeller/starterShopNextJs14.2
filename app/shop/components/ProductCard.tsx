@@ -18,7 +18,7 @@ export default  function ProductCard  ({ product }: { product: ProductType })  {
 
   return (
     <MotionDiv
-      className={`lg:hover:scale-105 transition-transform duration-300 ease-in-out lg:hover:z-20  relative max-w-sm rounded overflow-hidden shadow-lg flex flex-col justify-between h-full`}
+      className={`  min-h-fit lg:hover:scale-105 transition-transform duration-300 ease-in-out lg:hover:z-20  relative max-w-sm rounded overflow-hidden shadow-lg flex flex-col justify-between h-full`}
       transition={{ duration: 0.2 }}>
       <div className="relative h-full">
         <Image className="w-full min-w-full min-h-full object-contain shadow-slate-300/30 shadow-lg" src={product.image} alt={product.name} 
@@ -26,7 +26,7 @@ export default  function ProductCard  ({ product }: { product: ProductType })  {
         height={500}
 
         />
-          <div className='absolute top-0 right-0 flex gap-1'>
+          <div className='absolute top-0 right-0 flex gap-1 '>
             {product.isOnSale === true && (
                 <div className=" bg-red-500 text-white text-lg font-bold  px-4 py-1">
                 Sale
