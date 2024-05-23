@@ -17,7 +17,7 @@ export default function ShopSection() {
             
         <H1 content={contentValues.title} />
         <P content={contentValues.description} />
-    {/* // Der Inhalt des Kontaktformulars wird in der ContactForm Komponente bearbeitet */}
+
         <ProductCardGrid />
 
     </div>

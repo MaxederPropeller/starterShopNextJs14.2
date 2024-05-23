@@ -1,4 +1,4 @@
-
+'use client';
 import { MotionButton } from '@/lib/motionExport';
 
 import React from 'react';

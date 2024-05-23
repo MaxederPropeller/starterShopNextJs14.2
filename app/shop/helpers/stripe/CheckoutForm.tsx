@@ -1,4 +1,4 @@
-
+"use client";
 // Importiert Stripe-Typen für die TypeScript-Integration.
 import type Stripe from "stripe";
 import React, { useState } from "react";
