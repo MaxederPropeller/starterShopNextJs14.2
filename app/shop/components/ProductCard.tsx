@@ -36,24 +36,27 @@ export default function ProductCard({ product }: { product: ProductType }) {
         </div>
       </div>
 
-      <div className="px-6 py-4 flex-grow">
-        <div className="font-bold text-xl mb-2">{product.name}</div>
-        <p className="text-gray-700 text-base">{product.shortDes}</p>
-      </div>
 
-      <div className="px-6 py-4 flex justify-between items-center">
-        <div className="rounded-full text-xl font-semibold text-end text-gray-700">
-          <span className='text-2xl'>
-            {product.isOnSale ? (
-              <div className='flex flex-col justify-end items-end'>
-                <div className="text-gray-500 text-sm font-semibold line-through">{CURRENCY} {product.price}</div>
-                <div className="text-red-500 text-lg font-bold">{CURRENCY} {product.salePrice}</div>
-              </div>
-            ) : (
-              <div className="text-primary text-lg font-bold">{CURRENCY} {product.price}</div>
-            )}
-          </span>
+        <div className="px-6 py-4 flex-grow">
+          <div className="font-bold text-xl mb-2">{product.name}</div>
+          <p className="text-gray-700 text-base">{product.shortDes}</p>
         </div>
+        <div className="px-6 py-4 flex justify-end items-end w-full">
+            <div className="rounded-full text-xl font-semibold text-end text-gray-700">
+              <span className='text-2xl'>
+                {product.isOnSale ? (
+                  <div className='flex flex-col justify-end items-end'>
+                    <div className="text-gray-500 text-sm font-semibold line-through">{CURRENCY} {product.price}</div>
+                    <div className="text-red-500 text-lg font-bold">{CURRENCY} {product.salePrice}</div>
+                  </div>
+                ) : (
+                  <div className="text-primary text-lg font-bold">{CURRENCY} {product.price}</div>
+                )}
+              </span>
+            </div>
+          </div>
+ 
+      <div className="px-6 py-4 flex justify-between items-center">
 
         <div className="flex w-full gap-2 text-center">
           <MotionButton className='w-1/2'
