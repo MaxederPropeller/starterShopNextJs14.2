@@ -48,7 +48,7 @@ export default  function ProductCard  ({ product }: { product: ProductType })  {
         </div>
       </div>
 
-      <div className=" relative flex-grow px-6 py-4 h-fit relative">
+      <div className=" relative flex-grow px-6 py-4 h-fit ">
         <div className="font-bold text-xl mb-2">{product.name}</div>
         <p className="text-gray-700 text-base">{product.shortDes}</p>
       </div>
@@ -87,7 +87,7 @@ export default  function ProductCard  ({ product }: { product: ProductType })  {
           <CheckoutForm params={product} uiMode='hosted' />
         </div>
                 </div>
-                
+
     </MotionDiv>
   );
 };
